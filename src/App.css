@@ -5,7 +5,9 @@
 .App-logo {
   height: 40vmin;
 }
-
+div {
+  margin-left:20px;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -19,4 +21,12 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+.button {
+  padding:4px;
+  color: black;
+  font-weight: bold;
+  border: 1px solid black;
+  background:lightGray;
 }

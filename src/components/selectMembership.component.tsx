@@ -1,14 +1,10 @@
 import React from 'react';
 import { IMembershipState, IState } from '../reducers';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 export interface IMembershipProps {
     membership: IMembershipState
-}
-
-const initialState: IMembershipState = {
-    type: "normal",
-    amount: 0
 }
 
 export class SelectMembershipComponent extends React.Component<any, any> {
@@ -17,9 +13,8 @@ export class SelectMembershipComponent extends React.Component<any, any> {
         super(props);
     }
 
-    async Accept () {
-        this.props.history.push('/home');
-        window.location.reload();
+    async MembershipSelected () {
+        
     }
 
     render(){
@@ -38,7 +33,7 @@ export class SelectMembershipComponent extends React.Component<any, any> {
                 <input type="radio" name="membership" value="trial"/>
                 <label>Unlimited Trial (Virtual Currency Only)</label>
             </div>
-            <button>Select</button>
+            <Link to="/paypal" className="button">Select</Link>
             </>
         );
     }

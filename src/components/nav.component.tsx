@@ -1,5 +1,5 @@
 import React from 'react';
-import { IHomeState, IState } from '../reducers';
+import { IState } from '../reducers';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -21,6 +21,9 @@ export class NavComponent extends React.PureComponent<INaveProps> {
                         </li>
                         <li className="nav-item">
                             <Link to="/login" className="unset-anchor nav-link">Login/Signup</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/membership" className="unset-anchor nav-link">Select Membership</Link>
                         </li>
                     </ul>
                 </div>
