@@ -2,9 +2,12 @@ import React from 'react';
 import { IMembershipState, IState } from '../reducers';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { updateMembership } from '../actions/membership.actions';
+import { number } from 'prop-types';
 
 export interface IMembershipProps {
-    membership: IMembershipState
+    membership: IMembershipState;
+    updateMembership: (membershipType: string, endDate: number) => void;
 }
 
 export class SelectMembershipComponent extends React.Component<any, any> {
@@ -14,7 +17,8 @@ export class SelectMembershipComponent extends React.Component<any, any> {
     }
 
     async MembershipSelected () {
-        
+        console.log("Is this working?");
+        updateMembership("myString", 5);
     }
 
     render(){
@@ -33,7 +37,9 @@ export class SelectMembershipComponent extends React.Component<any, any> {
                 <input type="radio" name="membership" value="trial"/>
                 <label>Unlimited Trial (Virtual Currency Only)</label>
             </div>
-            <Link to="/paypal" className="button">Select</Link>
+            <button className='btns' id='memberSelectBtn' onClick= { () => this.MembershipSelected()} >
+                <Link to="/paypal" className="buttonLinks">Select</Link>
+            </button>
             </>
         );
     }

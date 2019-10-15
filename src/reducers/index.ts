@@ -3,8 +3,8 @@ import { membershipReducer } from "./membership.reducer";
 
 
 export interface IMembershipState {
-    type: string;
-    amount: number;
+    membershipType: string;
+    endDate: number;
 }
 
 // Composed state of all substates

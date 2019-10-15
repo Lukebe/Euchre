@@ -2,8 +2,8 @@ import { IMembershipState } from ".";
 import { membershipTypes } from "../actions/membership.actions";
 
 const initialState: IMembershipState = {
-    type: "normal",
-    amount: 0
+    membershipType: "free",
+    endDate: 0
 };
 
 export const membershipReducer = (state = initialState, action: any) => {
@@ -11,9 +11,10 @@ export const membershipReducer = (state = initialState, action: any) => {
         case membershipTypes.MEMBERSHIP_UPDATE:
             return {
                 ...state,
-                type: action.payload.type,
-                amount: action.payload.amount
+                membershipType: action.payload.membershipType,
+                endDate: action.payload.endDate
             }
+        console.log('Does this work?');
         default: break;
     }
     return state;
