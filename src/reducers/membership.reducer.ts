@@ -1,7 +1,6 @@
-import { IMembershipState } from ".";
 import { membershipTypes } from "../actions/membership.actions";
 
-const initialState: IMembershipState = {
+const initialState = {
     membershipType: "free",
     endDate: 0
 };
@@ -14,8 +13,8 @@ export const membershipReducer = (state = initialState, action: any) => {
                 membershipType: action.payload.membershipType,
                 endDate: action.payload.endDate
             }
-        console.log('Does this work?');
-        default: break;
-    }
+            default: break;
+        }
+        console.log('membership state: ' + state.membershipType);
     return state;
 }

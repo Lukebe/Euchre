@@ -1,24 +1,25 @@
 import React from 'react';
-import { IMembershipState, IState } from '../reducers';
+import { IState, IMembershipState } from '../reducers';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { updateMembership } from '../actions/membership.actions';
-import { number } from 'prop-types';
 
 export interface IMembershipProps {
     membership: IMembershipState;
     updateMembership: (membershipType: string, endDate: number) => void;
 }
 
-export class SelectMembershipComponent extends React.Component<any, any> {
+export class SelectMembershipComponent extends React.Component<IMembershipProps> {
 
     constructor(props: any) {
         super(props);
+
     }
 
-    async MembershipSelected () {
-        console.log("Is this working?");
-        updateMembership("myString", 5);
+    MembershipSelected () {
+        console.log("Member select");
+        this.props.updateMembership("myString", 5);
+        console.log(`membership data: ${this.props.membership.endDate}`);
     }
 
     render(){
@@ -38,21 +39,19 @@ export class SelectMembershipComponent extends React.Component<any, any> {
                 <label>Unlimited Trial (Virtual Currency Only)</label>
             </div>
             <button className='btns' id='memberSelectBtn' onClick= { () => this.MembershipSelected()} >
-                <Link to="/paypal" className="buttonLinks">Select</Link>
+                {/*<Link to="/paypal" className="buttonLinks">Select</Link> */}select
             </button>
             </>
         );
     }
 }
 
-const mapStateToProps = (state: IState) => {
-    return {
-        membership: state.membership
-    }
-}
+const mapStateToProps = (state: IState) => ({
+    membership: state.membership
+});
 
 const mapDispatchToProps = {
-
-}
+    updateMembership: updateMembership
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(SelectMembershipComponent);

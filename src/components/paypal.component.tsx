@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-export const PayPalComponent: React.FC = () => {
+const PayPalComponent: React.FC = () => {
 
     return(
         <>
@@ -9,3 +9,5 @@ export const PayPalComponent: React.FC = () => {
         </>
     )
 }
+
+export default PayPalComponent;

@@ -4,12 +4,12 @@ import { Provider } from 'react-redux';
 import { store } from './Store';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import NavComponent from './components/nav.component';
-import { HomeComponent } from './components/home.component';
-import { LoginComponent } from './components/login.component';
-import { SelectMembershipComponent } from './components/selectMembership.component';
+import HomeComponent from './components/home.component';
+import LoginComponent from './components/login.component';
+import SelectMembershipComponent from './components/selectMembership.component';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { EulaComponent } from './components/eula.component';
-import { PayPalComponent } from './components/paypal.component';
+import EulaComponent from './components/eula.component';
+import PayPalComponent from './components/paypal.component';
 const App: React.FC = () => {
   return (
     <Provider store={store}>
