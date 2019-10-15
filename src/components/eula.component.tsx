@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-export const EulaComponent: React.FC = () => {
+
+const EulaComponent: React.FC = () => {
     return(
         <>
             <h1>EULA</h1>
@@ -16,3 +17,4 @@ export const EulaComponent: React.FC = () => {
         </>
     );
 }
+export default EulaComponent;

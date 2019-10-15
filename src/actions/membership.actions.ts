@@ -8,5 +8,5 @@ export const updateMembership = (membershipType: string, endDate: number) => (di
             membershipType, endDate
         },
         type: membershipTypes.MEMBERSHIP_UPDATE
-    })
+    });
 }
